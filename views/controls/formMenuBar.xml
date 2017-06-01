@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formMenuBar" title="MenuBar" close=">exemplos/main/controls">
+        <fields>
+            <mmenubar id="menuBar">
+                <mpopupmenubaritem id="menuFile" label="File">
+                    <mdropdownmenu id="ddMenuFile">
+                        <mmenuitem id="menuFileOpen" label="Open" icon="folderOpen"/>
+                        <mmenuitem id="menuFileSave" label="Save" icon="save"/>
+                        <mmenuseparator/>
+                        <mmenuitem id="menuFileExit" label="Exit"/>
+                    </mdropdownmenu>
+                </mpopupmenubaritem>
+                <mmenubaritem id="menuEdit" label="Edit" action="@controls/formMenuBar"/>
+                <mpopupmenubaritem id="menuPopup" label="Popup">
+                    <mdropdownmenu id="ddPopupFile">
+                        <mpopupmenuitem id="menuNew" label="New" icon="task">
+                            <mdropdownmenu id="ddMenuNew">
+                                <mmenuitem id="menuNewFile" label="File"/>
+                                <mmenuitem id="menuNewFolder" label="Folder"/>
+                            </mdropdownmenu>
+                        </mpopupmenuitem>
+                    </mdropdownmenu>
+                </mpopupmenubaritem>
+                <mmenubaritem id="menuTools" label="Tools"  action="@controls/formMenuBar"/>
+            </mmenubar>
+        </fields>
+    </mform>
+</view>

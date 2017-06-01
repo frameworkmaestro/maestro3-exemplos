@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../layouts/view.dtd">
+<view>
+    <mform>
+        <property title="Form Tool" close=">controls/form"/>
+        <tool title="Ajuda" action="close" icon="help" />
+        <fields>
+            <mhcontainer>
+                <mtoolbutton icon="toggle" action="post" /><mlabel text="toggle"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="close" title="Fechar" action="post" /><mlabel text="close"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="minimize" action="post" /><mlabel text="minimize"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="maximize" action="post" /><mlabel text="maximize"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="restore" action="post" /><mlabel text="restore"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="gear" action="post" /><mlabel text="gear"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="prev" action="post" /><mlabel text="prev"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="next" action="post" /><mlabel text="next"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="pin" action="post" /><mlabel text="pin"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="unpin" action="post" /><mlabel text="unpin"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="right" action="post" /><mlabel text="right"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="left" action="post" /><mlabel text="left"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="help" action="post" /><mlabel text="help"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="save" action="post" /><mlabel text="save"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="search" action="post" /><mlabel text="search"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="minus" action="post" /><mlabel text="minus"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="plus" action="post" /><mlabel text="plus"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="refresh" action="post" /><mlabel text="refresh"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="up" action="post" /><mlabel text="up"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="down" action="post" /><mlabel text="down"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="collapse" action="post" /><mlabel text="collapse"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="expand" action="post" /><mlabel text="expand"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mtoolbutton icon="print" action="post" /><mlabel text="print"/>
+            </mhcontainer>
+        </fields>    
+    </mform>
+</view>
+
+
+
+
+
+

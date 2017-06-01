@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../layouts/view.dtd">
+<view>
+    <fields>
+        <javascript code="function getByJSON(){
+             var pessoa = manager.getModel('exemplos/pessoa',manager.byId('idPessoa').value);
+             manager.byId('cpf').value = pessoa.cpf;
+             manager.byId('dataNascimento').value = pessoa.dataNascimento;
+        };"/>
+        <mhcontainer>
+            <mtextfield id="idPessoa" label="ID Pessoa" value="" size="5" />
+            <mbutton id="btnJSON" text="JSON" action="!getByJSON();"/>
+        </mhcontainer>
+        <mtextfield id="cpf" label="CPF" />
+        <mcalendarfield id="dataNascimento" label="DataNascimento" />
+        <mtextfield id="sexo" label="Sexo" />
+        <mtextfield id="estadoCivil" label="EstadoCivil" />
+    </fields>
+</view>

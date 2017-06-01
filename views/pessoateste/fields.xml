@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE view
+  SYSTEM '../../../../public/layouts/view.dtd'>
+<view>
+	<fields>
+		<mhiddenfield id="pessoateste::idPessoaTeste"/>
+		<mtextfield id="pessoateste::nome" label="Nome" size="35"/>
+		<mnumberfield id="pessoateste::numeroMaximoDocumentos" label="Nº Máx de Documentos"/>
+	</fields>
+	<buttons>
+		<mbutton action="@pessoateste/save" id="btnPost" text="Salvar"/>
+		<mbutton action="@pessoateste/save2" id="btnPost2" text="Salvar 2"/>
+		<!-- <mbutton action="@pessoateste/save3" id="btnPost3" text="Salvar 3"/> -->
+		<!-- <mbutton action="@pessoateste/saveGetRepositoryModel" id="btnPost4" text="Salvar getRepository() Model"/> -->
+		<mbutton action="@pessoateste/saveVariosSemCache" id="btnPost5" text="Salvar Vários sem Cache"/>
+		<mbutton action="@pessoateste/saveVariosComCache" id="btnPost6" text="Salvar Vários com Cache"/>
+	</buttons>
+	<validators>
+		<mrequiredvalidator field="pessoateste::nome"/>
+		<mrequiredvalidator field="pessoateste::numeroMaximoDocumentos"/>
+	</validators>
+</view>

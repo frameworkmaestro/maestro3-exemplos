@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formTextField" title="Text Field" close=">exemplos/main/controls">
+        <fields>
+             <mhiddenfield id="hiddenField"/>
+            <mhcontainer>
+                <mvcontainer>
+                    <mtextfield id="nome" label="MTextField" width="20em" placeholder="Digite o nome" hint="hintNome"/>
+                    <mtextfield id="mask" label="MTextField Mask" width="15em" mask="(##)(aa)[***]" hint="mask: (##)(aa)[***]"/>
+                    <mpasswordfield id="senha" label="MPasswordField" />
+                    <mmultilinefield id="multiline" label="MMultilineField" rows="5" cols="40"/>
+                </mvcontainer>
+                <mvcontainer>
+                    <mcalendarfield id="dataNascimento" label="MCalendarField"/>
+                    <mcalendarfield id="dataRange" label="MCalendarField - Range" range="{{array('01/07/2011',Manager::getSysDate())}}" />
+                    <mtimefield id="timefield" label="MTimeField" value="12:34" width="8em"/>
+                    <mtimestampfield id="timestamp" label="MTimestampField" value="12/10/2005 23:21:34"/>
+                </mvcontainer>
+                <mvcontainer>
+                    <mtextfield id="regexp" label="MTextField RegExp" width="15" hint="regexp: [A-Za-z]+[0-9][0-9]"/>
+                    <mtextfield id="numberRange" label="MTextField Number Range" width="8em" hint="faixa: 10 a 15"/>
+                    <memailfield id="email" label="MEmailField" width="15em"/>
+                    <mcurrencyfield id="currency" label="MCurrencyField" width="15em" value="12.34" hint="indicar os centavos" />
+                    <mnumberfield id="number" label="MNumberField"/>
+                    <mnumberspinner id="spinner" label="MNumberSpinner" value="10" width="5em" />
+                    <mphonefield id="telefone" label="MPhoneField"/>
+                </mvcontainer>
+                <mvcontainer>
+                    <mcpffield id="cpf" label="MCPFField"/>
+                    <mcnpjfield id="cnpj" label="MCNPJField" width="15em"/>
+                    <mnitfield id="nit" label="MNITField"/>
+                    <mcepfield id="cep" label="MCEPField"/>
+                    <msiapefield id="siape" label="MSIAPEField" />
+                </mvcontainer>           
+            </mhcontainer>     
+            <mhcontainer>
+                <meditor id="richTextEditor" label="MEditor" height="300px" width="600px"/>
+            </mhcontainer>        
+        </fields>
+        <buttons>
+            <mbutton id="btnSubmit" text="Submit" />
+            <mbutton id="btnAction" text="Action" action="@exemplos/controls/form" />
+        </buttons>
+        <validators>
+            <mrequiredvalidator field="nome" message="preencha o campo nome" active="$this->data->nomeValidator"/>
+            <mrequiredvalidator field="mask" message="preencha o campo mask"/>
+            <mrequiredvalidator field="senha" message="preencha o campo senha"/>
+            <mrequiredvalidator field="dataNascimento" message="preencha o campo data"/>
+            <mrequiredvalidator field="dataRange" message="preencha o campo data range"/>
+            <mrequiredvalidator field="regexp" message="preencha o campo regexp"/>
+            <mrequiredvalidator field="numberRange" message="preencha o campo number range"/>
+            <mrequiredvalidator field="email" message="preencha o campo email"/>
+            <mrequiredvalidator field="currency" message="preencha o campo currency"/>
+            <mrequiredvalidator field="number" message="preencha o campo number"/>
+            <mrequiredvalidator field="spinner" message="preencha o campo spinner"/>
+            <mrequiredvalidator field="timefield" message="preencha o campo time"/>
+            <mrequiredvalidator field="timestamp" message="preencha o campo timestamp"/>
+            <mrequiredvalidator field="telefone" message="preencha o campo telefone"/>
+            <mrequiredvalidator field="cpf" message="preencha o campo cpf"/>
+            <mrequiredvalidator field="cnpj" message="preencha o campo cnpj"/>
+            <mrequiredvalidator field="nit" message="preencha o campo nit"/>
+            <mrequiredvalidator field="cep" message="preencha o campo cep"/>
+            <mrequiredvalidator field="siape" message="preencha o campo siape"/>            
+            <mrequiredvalidator field="multiline" message="preencha o campo multiline"/>
+            <mregexpvalidator field="regexp" parameter="[A-Za-z]+[0-9][0-9]"/>
+            <mrangevalidator field="numberRange" parameter="10:15"/>
+        </validators>
+    </mform>
+</view>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formNewWindow" title="Cadastrar Pessoa" close="close">
+        <data id="idPessoaNew" value="$this->data->object->idPessoa"/>
+        <fields>
+            <mhiddenfield id="idPessoaNew" />
+            <mtextfield id="nome" label="Nome" />
+            <mtextfield id="cpf" label="Cpf" />
+            <mcalendarfield id="dataNascimento" label="DataNascimento" />
+            <mtextfield id="email" label="Email" />
+            <mhiddenfield id="idPaisNacionalidade" value="25"/>
+            <mhiddenfield id="idMunicipioNascimento" value="12640" />
+            <mhiddenfield id="idPaisNascimento" value="25" />
+            <mhiddenfield id="sexo" value="M" />
+            <mhiddenfield id="estadoCivil" value="S" />
+            <mprompt id="promptOk" type="information" message="Cadastro ok" ok="" />
+        </fields>
+        <buttons>
+            <mbutton id="btnPostWindow" text="Enviar"/>
+            <mbutton id="btnClose" text="Fechar" action="close" />
+        </buttons>
+        <data load="$this->data->object"/>
+        <method name="onPostBack" args="$that">
+        <![CDATA[  $that->page->onLoad("manager.doPrompt('promptOk');"); ]]>    
+        </method>
+    </mform>
+</view>

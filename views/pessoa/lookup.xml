@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform title="Pesquisa Pessoa" close="close" enterAction="submit">
+        <fields>
+            <mhcontainer>
+                <mtextfield id="filter::nome" label="Nome" value="$this->data->filter->nome" size="30" />
+                <mbuttonfind />
+            </mhcontainer>
+            <mdatagrid id="lookupTable" query="$this->data->query" pageLength="15">
+                <mdatagridcolumn field="idPessoa" visible="false"/>
+                <mdatagridhyperlink field="nome" title="Nome" width="100%"/>
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>

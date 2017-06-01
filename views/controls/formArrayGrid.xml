@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../layouts/view.dtd">
+<view>
+    <fields>
+        <mhcontainer>
+            <mtextfield id="nome" label="Nome" value="$this->data->nome" size="15" />
+            <mbuttonfind/>
+        </mhcontainer>
+        <mgrid id="gridFind" data="$this->data->array" pageLength="$this->data->pageLength" actionUpdate="@exemplos/controls/save/#0#"
+            rowCount="$this->data->rowCount" range="$this->data->range"
+            rowMethod="{{ array('formArrayGrid','rowMethod')}}" actionSelect="marca">
+            <mgridactionicon value="delete" action="@table/delete/#0#" enabled="true"/>
+            <mgridactiontext value="Delete" action="@table/delete/#0#" enabled="true"/>
+            <mgridhyperlink index="1" action="^controls/window1/#0#" title="Nome" width="50%"/>
+            <mgridcolumn index="3" title="DataNascimento" width="10%"/>
+            <mgridcolumn index="2" title="CPF" width="10%"/>
+            <mgridcolumn index="6" title="Calculo 1" width="15%"/>
+            <mgridcolumn index="7" title="Calculo 2" width="15%"/>
+        </mgrid>
+    </fields>
+</view>

@@ -1,0 +1,16 @@
+{{$page->fetch('header')}}
+<!-- basic preloader: -->
+<div id="loader">
+    <div id="loaderInner" style="direction:ltr;">Carregando.... </div>
+</div>
+<div id="appLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'" style="background-color:#CCC;">
+    <div id="mainPane" data-dojo-type="manager/BoxPane" data-dojo-props="title:'{{$manager->getConf('name')}}',region: 'center'">
+        <div id="appLayoutInt" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'" style="background-color:#FFF;">
+            <div id="leftPane" data-dojo-type="manager/ElementPane" data-dojo-props="region: 'left', splitter: true, href:'{{$manager->getURL('mainmenu')}}'"></div>
+            <div id="centerPane" data-dojo-type="manager/ElementPane" data-dojo-props="region: 'center', tabPosition: 'bottom'">
+                {{$page->generate('content')}}
+            </div>
+        </div>
+    </div>
+</div>
+{{$page->fetch('footer')}}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formScrollGrid" title="ScrollGrid" close=">exemplos/main/controls">
+        <fields>
+            <mlabel text="Scroll Grid: grid sem paginação (pageLength=0) e dimensões definidas em pixels" />
+            <mdatagrid id="gridScroll" query="$this->data->query" pageLength="0" actionUpdate="@exemplos/controls/save/#0#"
+            actionDelete="@exemplos/controls/delete/#0#"  actionSelect="marca" scrollHeight="400px" width="600px" hasForm="true">
+                <mdatagridhyperlink field="nome" action=">exemplos/table/formObject/#0#" title="Nome" width="50%"/>
+                <mdatagridcolumn field="dataNascimento" title="DataNascimento" width="25%"/>
+                <mdatagridcontrol field="opcional" title="Opcional" >
+                    <mtextfield id="colOpcional[$id]" size="10"  value ="%valor%" height="15px"/>
+                </mdatagridcontrol>
+            </mdatagrid>
+        </fields>
+        <buttons>
+            <mbutton id="btnSubmit" text="Submit" />
+        </buttons>
+    </mform>
+</view>

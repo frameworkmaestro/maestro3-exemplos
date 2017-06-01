@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <fields>
+        <mlabel text="Arraste uma linha do grid Origem para o grid Destino."/>
+        <mhcontainer width="100%">
+            <mdatagrid id="gridSource" query="$this->data->query" pageLength="0" dnd="true" rowMethod="{{ array('formDnDGrids','rowMethod')}}">
+                <mgridcontrol index="99">
+                    <mtextfield id="ordem[$id]" size="2" readonly="true" class="gridOrdem"/>
+                </mgridcontrol>
+                <mdatagridcolumn field="idPessoa" title="ID"/>
+                <mdatagridcolumn field="nome" title="Nome" width="50%"/>
+                <mdatagridcolumn field="dataNascimento" title="DataNascimento" width="25%"/>
+            </mdatagrid>
+            <mgrid id="gridDest" pageLength="0" dnd="true" data="">
+                <mgridcontrol index="99">
+                    <mtextfield id="ordem[$id]" size="2"/>
+                </mgridcontrol>
+                <mgridcolumn index="1"  title="ID" width="5%"/>
+                <mgridcolumn index="2" title="Nome" width="50%"/>
+                <mgridcolumn index="4" title="DataNascimento" width="25%"/>
+            </mgrid>
+        </mhcontainer>
+        <mbutton id="btnOrder" text="Ordena o grid Destino pela coluna 'ordem'" action="!orderGrid('gridDest');"/>
+    </fields>
+    <buttons>
+        <mbutton id="btnSubmit" text="Submit" />
+    </buttons>
+</view>

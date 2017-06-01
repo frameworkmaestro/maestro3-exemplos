@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../layouts/view.dtd">
+<view>
+    <mformaction id="formFoto" title="Foto" close=">pessoa/main" base="formObject">
+        <fields>
+            <mhiddenfield id="idPessoa"/>
+            <mimage id="imgFoto" label="Foto Atual" source="$this->data->url"/>
+            <mfilefield id="foto" label="Nova Foto" multiple="false" text="Selecionar Arquivo"/>            
+        </fields>
+        <data load="$this->data->object" />        
+        <buttons>
+            <mbutton id="btnPost" text="Salvar" action="{{ '@pessoa/saveFoto/' . $this->data->object->id }}"/>
+        </buttons>
+    </mformaction>
+</view>

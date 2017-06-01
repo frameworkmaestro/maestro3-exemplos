@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formButtons" title="Buttons" close=">exemplos/main/controls">
+        <fields>
+            <mbutton id="btnPost" text="Exemplo - Post" action="@exemplos/controls/formButtons" class="btn btn-primary"/>
+            <mbutton id="btnAjax" text="Exemplo - Ajax" action=":exemplos/controls/ajaxButtons|btnAjax|paneAjax" />
+            <mcontentpane id="paneAjax"/>
+            <mbutton id="btnImage" text="Exemplo - Image" image="save" />
+            <mbuttondropdown id="btnDropDown" text="Exemplo - DropDown">
+                <mmenuitem label="Save" icon="save" action="!alert('save!');"/>
+                <mmenuitem label="Delete" icon="delete" action=">exemplos/controls/formButtons" />
+            </mbuttondropdown>
+        </fields>
+    </mform>
+</view>

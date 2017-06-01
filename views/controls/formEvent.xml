@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formEvent" title="Form Event" close="main/controls">
+        <fields>
+            <javascript onload="console.log('exemplo de codigo em onload');" code="console.log('exemplo de jscode');"/>
+            <mselection id="tipo" label="Tipo" options="{{ array('bg1' => 'Opção 1', 'bg2' => 'Opção 2', 'bg3' => 'Opção 3') }}">
+                <event event="onChange" handler="console.log('exemplo de evento registrado via xml');" preventDefault="false"/>
+            </mselection>
+        </fields>
+        <buttons>
+            <mbutton id="btnSubmit" text="Submit" />
+        </buttons>
+    </mform>
+</view>

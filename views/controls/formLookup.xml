@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formLookup" title="Form Lookup" close=">exemples/main/controls">
+        <fields>
+            <mhiddenfield id="idTeste"/>
+            <mlookuptextfield id="nomeLookup" label="Nome [MLookupTextField]" width="300px" action="pessoa/lookup" related="idTeste:idPessoa,nomeLookup:nome" filter="nomeLookup"/>
+            <mlookupfieldvalue id="teste" label="Teste  [MLookupFieldValue]" width="300px" action="pessoa/lookup" related="idTeste:idPessoa,teste:nome" filter="teste"/>
+            <mhcontainer>
+                <mhiddenfield id="pessoa::idPessoa"/>
+                <mlabel text="[MLookupField]" />
+                <mtextfield id="pessoa::nome" label="Nome" size="20"/>
+                <mtextfield id="pessoa::cpf" label="CPF" size="15"/>
+                <mtextfield id="pessoa::email" label="Email" size="20"/>
+                <mlookupfield id="lookup" related="pessoa::idPessoa:idPessoa,pessoa::nome:nome,pessoa::cpf:cpf,pessoa::email:email" action="controls/lookupPessoa" 
+                filter="pessoa::nome,pessoa::cpf,pessoa::email"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mhiddenfield id="idUsuarioNew"/>
+                <mlabel text="[MLookupField]" />
+                <mtextfield id="loginNew" label="Login" size="20"/>
+                <mselection id="selection" label="Teste" options="$this->data->options"/>
+                <mlookupfield id="lookupNew" related="idUsuarioNew:idUsuario,loginNew:login,selection:idUsuario" action="controls/lookupUsuario" filter="loginNew,selection"/>
+            </mhcontainer>
+            <mlookuppessoa id="lookupPessoa" label="Pessoa [componente MLookupPessoa]" />
+        </fields>    
+        <buttons>
+            <mbutton id="btnSubmit" text="Submit" />
+        </buttons>
+    </mform>
+</view>

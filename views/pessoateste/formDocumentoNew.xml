@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE view
+  SYSTEM '../../../../public/layouts/view.dtd'>
+<view>
+    <mform base="formObject" close="{{'adm/pessoateste/formObject/'.$this-&gt;data-&gt;id}}" id="formDocumentoNew" title="Novo Documento">
+        <fields>
+            <mhiddenfield id="documento::idDocumentoTeste"/>
+            <mhiddenfield id="pessoateste::idPessoaTeste" value="$this->data->pessoateste->idPessoaTeste"/>
+            <mtextfield id="documento::nome" label="Nome" size="35"/>
+            <mtextfield id="documento::numero" label="Número" size="15"/>
+        </fields>
+        <validators>
+            <mrequiredvalidator field="documento::nome"/>
+            <mrequiredvalidator field="documento::numero"/>
+        </validators>
+        <buttons>
+            <mbutton action="@adm/pessoateste/saveDocumento" id="btnPost" text="Enviar"/>
+        </buttons>
+    </mform>
+</view>

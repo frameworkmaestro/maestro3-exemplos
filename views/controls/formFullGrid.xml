@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <!-- formFullGrid.xml: MForm definido em formFullGrid.php -->
+    <javascript code="function atualizaTotal(id) {var total = parseFloat(manager.getElementValueById('total'))+parseFloat(manager.getElementValueById(id)); manager.setElementValueById('total',total);}"/>
+    <fields>
+        <mhcontainer>
+            <mtextfield id="nome" label="Nome" value="$this->data->nome" size="15" />
+            <mbuttonfind/>
+        </mhcontainer>
+        <mdatagrid id="gridFind" query="$this->data->query" pageLength="15" actionUpdate="@pessoa/save/#0#"
+                   actionDelete="@pessoa/delete/#0#"  actionSelect="marca" rowMethod="{{ array('form','rowMethod')}}">
+            <mdatagridcolumn field="idPessoa" visible="false"/>
+            <mdatagridcolumn type="link" field="nome" action=">pessoa/formObject/#0#" title="Nome" width="40%"/>
+            <mdatagridcolumn field="salario" title="Salário" width="20%" render="float"/>
+            <!-- render localizado em components \ renders.php -->
+            <mdatagridcolumn field="dataNascimento" title="DataNascimento" render="{{ array('renders','colorData')}}"  width="20%"/>
+            <!-- render localizado no próprio form (formFullGrid.php) -->
+            <mdatagridcolumn field="cpf" title="Ativo?" render="{{ array('form','renderSimNao')}}"  width="10%"/>
+            <!-- mdatagridcolumn type=control: -->
+            <!-- .no atributo id a variavel $id pega o valor da coluna indice -->
+            <!-- .por default, o valor do control é o valor do field correspondente -->
+            <!-- .para usar outro valor, usar o modificador %nome_da_coluna% -->
+            <mdatagridcolumn type="control" title="Nome" field="novoNome">
+                <mtextfield id="nome[$id]" value="%nome%" readonly="true" width="100px"/>
+            </mdatagridcolumn>
+            <mdatagridcolumn type="control" width="2%" align="center">
+                <mlookupfield id="lookupConta[$id]" related="nome[$id]:nome" action="{{'>pessoa/lookup/#0#'}}"/>
+            </mdatagridcolumn>
+            <mdatagridcolumn type="control" field="email" title="Opcional" >
+                <mtextfield id="colOpcional[$id]" size="10"  value ="%valor%" height="15px">
+                    <event event="onBlur" handler="atualizaTotal(this.id);" preventDefault="false"/>
+                </mtextfield>    
+            </mdatagridcolumn>
+            <mgridaction type="icon" value="delete" action="@pessoa/deleteFullGrid/#0#" enabled="true"/>
+            <mgridaction type="text" value="Delete" action="@pessoa/deleteFullGrid/#0#" enabled="true"/>
+           
+        </mdatagrid>
+        <mhcontainer>
+            <mlabel text="ids selecionados:"/>
+            <mlabel text="$this->data->marca"/>
+        </mhcontainer>
+        <mhcontainer>
+            <mlabel text="Total:"/>
+            <mtextfield id="total" size="10"  value ="0"/>
+        </mhcontainer>
+    </fields>
+    <buttons>
+        <mbutton id="btnSubmit" text="Submit" />
+    </buttons>
+</view>

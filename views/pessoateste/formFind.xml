@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE view
+  SYSTEM '../../../../public/layouts/view.dtd'>
+<view>
+    <mform base="formBase" close=">adm/main" id="formFind" title="Pesquisar">
+        <fields>
+            <mhcontainer>
+            <mhcontainer>
+                <mtextfield id="filter::nome" label="Nome" size="35" value="$this->data->filter->nome"/>
+                <mtextfield id="filter::numeroMaximoDocumentos" label="Nº Máx de Documentos" size="15" value="$this->data->filter->numeroMaximoDocumentos"/>
+                <mbuttonfind/>
+            </mhcontainer>
+            <mvcontainer>
+                <mlabel text="$this->data->count"/>
+                <mlabel text="$this->data->countCache"/>
+            </mvcontainer>
+            <mlabel text="$this->data->isset"/>
+            </mhcontainer>
+            <mdatagrid id="gridFind" pageLength="15" query="$this->data->query">
+                <mdatagridcolumn field="idPessoaTeste" title="ID"/>
+                <mdatagridhyperlink action=">adm/pessoateste/formUpdate/#0#" field="nome" title="Nome" width="80%"/>
+                <mdatagridcolumn field="numeroMaximoDocumentos" title="Nº Máx de Documentos"/>
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formObject" close=">adm/pessoateste/formFind" base="formBase">
+        <property title="$this->data->pessoateste->description" />
+        <action action="{{ 'formUpdate/' . $this->data->id }}" label="Editar" />
+        <action action="{{ 'formDocumentoFind/' . $this->data->id }}" label="Documentos" />
+        <action action="{{ 'formDocumentoNew/' . $this->data->id }}" label="Novo Documento" />
+        <action action="{{ 'formDelete/' . $this->data->id }}" label="Excluir" />
+    </mform>
+</view>

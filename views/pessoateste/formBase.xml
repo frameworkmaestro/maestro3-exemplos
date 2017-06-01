@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formBase" title="Pessoateste" close=">adm/main">
+        <action action="formFind" label="Pesquisar" />
+        <action action="formNew" label="Inserir Novo" />
+        <action action="limparBancoInserir500Pessoas" label="Limpar banco/inserir 500 Pessoas" />
+        <!-- <action action="formBenchmark" label="Benchmark" /> -->
+        <!-- <action action="benchmarkRead" label="Benchmark Read" /> -->
+        <!-- <action action="benchmarkWrite" label="Benchmark Write" /> -->
+        <!-- <action action="benchmarkForeach" label="Benchmark Foreach" /> -->
+    </mform>
+</view>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../layouts/view.dtd">
+<view>
+    <mlabel text="Pane preenchido via Ajax" />
+</view>

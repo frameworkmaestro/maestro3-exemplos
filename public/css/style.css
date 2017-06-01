@@ -1,0 +1,45 @@
+/******************************************************************************
+ * Icons and Images
+ ******************************************************************************/
+
+.exemplosIconControls {
+    background-image: url(../images/32x32/controls.png);
+}
+
+.exemplosIconForm {
+    background-image: url(../images/32x32/form.png);
+}
+
+.exemplosIconFind {
+    background-image: url(../images/16x16/find.png);
+}
+
+/******************************************************************************
+ * Breadcrumbs
+ ******************************************************************************/
+
+.breadcrumbExemplo1 {
+    background-color: #F5F5F5;
+}
+
+.breadcrumbExemplo1 ul {
+    list-style: none outside none;
+    padding: 8px 15px;
+}
+.breadcrumbExemplo1 ul li {
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+.breadcrumbExemplo2 {
+    background-color: #CCC;
+}
+
+.breadcrumbExemplo2 ul {
+    list-style: none outside none;
+    padding: 8px 15px;
+}
+.breadcrumbExemplo2 ul li {
+    display: inline-block;
+    padding: 0px 5px;
+}

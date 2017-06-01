@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <javascript code="function atualizaTotal(id) {var total = parseFloat(manager.getElementValueById('total'))+parseFloat(manager.getElementValueById(id)); manager.setElementValueById('total',total);}"/>
+    <mform id="formDGrid" title="Form DGrid" close=">exemples/main/controls">
+        <fields>
+            <mhcontainer>                
+                <mtextfield id="nome" label="Nome" value="$this->data->nome" size="15" />
+                <mbuttonfind/>
+            </mhcontainer>
+            <mdgrid id="dgridFind" pageLength="15" 
+                       actionData="formDGridData"
+                       actionUpdate="@exemplos/controls/save/#0#"
+                       actionDelete="@exemplos/controls/delete/#0#"
+                       actionSelect="marca" rowMethod="{{ array('formGridXMLCode','rowMethod')}}" type="demand">
+                <tool title="Exportar para Excel" action="+exemplos/controls/exportExcel" icon="excel" />
+                <tool title="Exportar para CSV" action="+exemplos/controls/exportCSV" icon="CSV" />
+                <tool title="Exportar para PDF" action="+exemplos/controls/exportPDF" icon="PDF" />
+                <mgridcolumn field="idPessoa" visible="false"/>
+                <mgridcolumn type="link" field="nome" action="^controls/window1/#0#" title="Nome" width="35%"/>
+                <mgridcolumn field="valor" title="Valor" width="20%" align="right"/>
+                <mgridcolumn field="dataNascimento" title="DataNascimento" width="20%"/>
+                <mgridcolumn field="ativo" title="Ativo?" options="$this->data->textoAtivo"  width="10%"/>
+            <!-- mdatagridcontrol: -->
+            <!-- .no atributo id a variavel $id pega o valor da coluna indice -->
+            <!-- .por default, o valor do control é o valor do field correspondente -->
+            <!-- .para usar outro valor, usar o modificador %nome_da_coluna% -->
+                <mgridcolumn type="control" field="opcional" title="Opcional" >
+                    <mtextfield id="colOpcional[$id]" size="10"  value ="%valor%" height="15px">
+                        <event event="blur" handler="atualizaTotal(this.id);" preventDefault="false"/>
+                    </mtextfield>    
+                </mgridcolumn>
+            </mdgrid>
+            <mhcontainer>
+                <mlabel text="ids selecionados:"/>
+                <mlabel text="$this->data->marca"/>
+            </mhcontainer>
+            <mhcontainer>
+                <mlabel text="Total:"/>
+                <mtextfield id="total" size="10"  value ="0"/>
+            </mhcontainer>
+        </fields>
+        <buttons>
+            <mbutton id="btnSubmit" text="Submit" />
+        </buttons>
+    </mform>
+</view>

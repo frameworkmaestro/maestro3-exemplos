@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formLinks" title="Links" close=">exemplos/main/controls">
+        <fields>
+            <mlink id="lnkExemplo" text="Exemplo - Link" action=">exemplos/controls/formLinks"/>
+            <mlink id="lnkAjax" text="Exemplo - Ajax" action=":exemplos/controls/ajaxButtons|lnkAjax|paneAjax" />
+            <mcontentpane id="paneAjax"/>
+            <mhr/>
+            <mimagelink id="imageLinkCSS" label="MImageLink via CSS" css="exemplosIconControls" action="!console.log('MImageLink CSS');" width="32px" height="32px"/>
+            <mhr/>
+            <mimagelinklabel id="imageLinkLabelIconCSS" imageType="icon" label="MImageLinkLabel via CSS - icon" css="exemplosIconFind" action="!console.log('MImageLink CSS Icon');"/>
+            <mhr/>
+            <mwindow id="window1" url="controls/window1"/>
+            <mlink id="linkWin" text="Abrir Window 1 via MLink" action="open:window1"/>
+        </fields>
+    </mform>
+</view>

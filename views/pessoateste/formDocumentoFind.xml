@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formDocumentoFind" title="Documentos" close="{{'adm/pessoateste/formObject/'.$this->data->id}}" base="formObject">
+        <fields>
+            <mhcontainer>
+                <mtextfield id="filter::nome" label="Nome" value="$this->data->filter->nome" size="35" />
+                <mtextfield id="filter::numero" label="Número" value="$this->data->filter->numero" size="15" />
+                <mbuttonfind/>
+            </mhcontainer>
+            <mdatagrid id="gridFind" query="$this->data->query" actionDelete="@adm/pessoateste/formDocumentoDelete/#0#" pageLength="15">
+                <mdatagridcolumn field="idDocumentoTeste" title="ID"/>
+                <mdatagridcolumn field="idPessoaTeste" visible="false"/>
+                <!-- <mdatagridhyperlink field="nome" action=">adm/pessoateste/formDocumentoUpdate/#0#" title="Nome" width="50%"/> -->
+                <mdatagridcolumn field="nome" title="Nome" width="50%"/>
+                <mdatagridcolumn field="numero" title="Número" width="50%"/>
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>
+

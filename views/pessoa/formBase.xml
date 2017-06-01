@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formBase" title="Pessoa" actions="exemplos.crud.pessoa" close=">exemplos/main" />
+</view>

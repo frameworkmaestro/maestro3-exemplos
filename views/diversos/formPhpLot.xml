@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../public/layouts/view.dtd">
+<view>
+    <mform id="formPhpLot" title="Criando Gráficos com PHPLot" load="$this->data">
+        <fields>
+            <mtextfield id="titulo" label="Título do Gráfico" width="350px"/>
+            <mhcontainer >
+                <mtextfield id="eixoX" label="Nome do eixo X"/>
+                <mtextfield id="eixoY" label="Nome do eixo Y"/>
+            </mhcontainer>
+            <mselection id="tipoLot" label="Tipo do Gráfico" options="$this->data->tipoLotOpt"/>
+            <mhcontainer>
+            <mbasegroup caption="Primeiro Valor" width="500px">
+                <mhcontainer>
+                    <mtextfield id="x1" label="Valor X"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y11" label="1º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y12" label="2º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y13" label="3º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                </mhcontainer>
+            </mbasegroup>
+            <mbasegroup caption="Segundo Valor" width="500px">
+                <mhcontainer >
+                    <mtextfield id="x2" label="Valor X"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y21" label="1º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y22" label="2º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y23" label="3º Valor Y" width="30px"/>
+                </mhcontainer>
+            </mbasegroup>
+            </mhcontainer>
+            <mhcontainer>
+            <mbasegroup caption="Terceiro Valor" width="500px">
+                <mhcontainer >
+                    <mtextfield id="x3" label="Valor X"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y31" label="1º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y32" label="2º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y33" label="3º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                </mhcontainer>
+            </mbasegroup>
+            <mbasegroup caption="Quarto Valor" width="500px">
+                <mhcontainer>
+                    <mtextfield id="x4" label="Valor X"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y41" label="1º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y42" label="2º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                    <mtextfield id="y43" label="3º Valor Y" width="30px"/>
+                    <mbasegroup width="20px" fieldset="false"><mlabel label=" "/></mbasegroup>
+                </mhcontainer>
+            </mbasegroup>
+            </mhcontainer>
+            <mimage id="MImage" text="grafico" source="$this->data->locate"/>
+        </fields>
+        <buttons>
+            <mbutton id="btnPost" text="Executar" action="@diversos/formPhpLot"/>
+        </buttons>
+    </mform>
+</view>
